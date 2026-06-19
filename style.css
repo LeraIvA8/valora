@@ -1,0 +1,908 @@
+/* =========================
+   ПЕРЕМЕННЫЕ И СБРОС
+========================= */
+
+:root {
+    --bg-dark: #0f1011;
+    --bg-card: #161719;
+    --gold: #bc9c65;
+    --gold-hover: #a38453;
+    --text-light: #ffffff;
+    --text-muted: #a0a5ad;
+    --border-color: rgba(188, 156, 101, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 650px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.brand-gold {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    color: var(--gold);
+    margin-top: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+.hero-descr {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    max-width: 520px;
+    margin-bottom: 40px;
+}
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn-filled {
+    background-color: var(--gold);
+    color: #000;
+    padding: 15px 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-filled:hover {
+    background-color: var(--gold-hover);
+}
+
+.link-contact {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+}
+
+.link-contact:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 20px 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-v {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.logo-text p {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.main-nav a,
+.hero-cta a {
+    transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover,
+.hero-cta a:hover {
+    opacity: 0.7;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+    padding: 12px 28px;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--gold);
+    color: #000;
+}
+
+/* =========================
+   ОБЩИЕ СЕКЦИИ
+========================= */
+
+.section-tag {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+    padding: 100px 5%;
+    background-color: var(--bg-card);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 70px;
+    margin-bottom: 80px;
+}
+
+.about-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+    align-self: center;
+}
+
+/* =========================
+   ADVANTAGES
+========================= */
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.adv-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 35px;
+    border-left: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.adv-card:hover {
+    transform: translateY(-5px);
+}
+
+.adv-card h4 {
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.adv-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   STATS (ОБНОВЛЕНО ПОД МАКЕТ)
+========================= */
+
+.stats-section {
+    padding: 100px 5%;
+    background-color: #111214;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    /* Текст слева, цифры справа */
+    gap: 70px;
+    align-items: start;
+}
+
+.stats-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.stats-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.link-more {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link-more:hover {
+    color: var(--gold-hover);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Сетка цифр 2х2 вместо 4 в ряд */
+    gap: 40px;
+}
+
+.stat-box {
+    border-left: 1px solid var(--border-color);
+    padding-left: 25px;
+}
+
+.stat-box h3 {
+    color: var(--gold);
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.stat-box p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   SERVICES (НОВАЯ СЕКЦИЯ С МАКЕТА)
+========================= */
+
+.services-section {
+    padding: 100px 5%;
+    background-color: var(--bg-dark);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 колонки как на прототипе */
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    padding: 45px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(188, 156, 101, 0.15);
+}
+
+.service-card h4 {
+    color: var(--gold);
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* =========================
+   CONTACTS
+========================= */
+
+.contacts-section {
+    padding: 100px 5%;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.contact-item {
+    margin-bottom: 30px;
+}
+
+.contact-item h4 {
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    /* Приведено в соответствие с макетом */
+    letter-spacing: 1px;
+}
+
+.contact-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.map-image {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 40px 5%;
+    text-align: center;
+    background-color: #090a0b;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-section {
+    padding: 100px 5%;
+    background-color: #0b0d12;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 120px;
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-card);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+}
+
+.project-info {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2;
+}
+
+.project-info h3 {
+    color: var(--gold);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.project-info p {
+    color: #d5d5d5;
+    font-size: 0.9rem;
+}
+
+/* РАЗМЕРЫ КАРТОЧЕК */
+.project-card:nth-child(1) {
+    grid-column: span 3;
+    grid-row: span 5;
+}
+
+.project-card:nth-child(2) {
+    grid-column: span 5;
+    grid-row: span 3;
+}
+
+.project-card:nth-child(3) {
+    grid-column: span 4;
+    grid-row: span 3;
+}
+
+.project-card:nth-child(4) {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.project-card:nth-child(5) {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+/* =========================
+   ADAPTIVE / МЕДИА-ЗАПРОСЫ
+========================= */
+
+@media (max-width: 992px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        /* На планшетах текст встает над цифрами */
+        gap: 40px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Услуги перестраиваются в 2 колонки */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+
+    .project-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+    }
+
+    .project-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
+
+.projects-contact-btn {
+    display: none;
+}
+
+/* ==========================================================================
+   Стили навигации для ПК (Базовые правила, чтобы кнопка была скрыта)
+   ========================================================================== */
+.menu-toggle,
+.hamburger-btn {
+    display: none;
+}
+
+/* ==========================================================================
+   Мобильная адаптация (Срабатывает только на экранах меньше 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    .main-header {
+        position: relative;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Скрываем стандартный инпут */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Показываем кнопку-гамбургер */
+    .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    /* Полоски бургера */
+    .hamburger-btn span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #bc9c65;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .main-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #161719;
+        border-top: 1px solid #bc9c65;
+        flex-direction: column;
+        gap: 0 !important;
+        padding: 10px 0;
+        z-index: 99;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(188, 156, 101, 0.1);
+        transition: background 0.2s;
+    }
+
+    .main-nav ul li a:hover {
+        background: rgba(188, 156, 101, 0.1);
+    }
+
+    /* МАГИЯ ЧЕКБОКСА: Если чекбокс активен -> показываем меню */
+    .menu-toggle:checked~ul {
+        display: flex !important;
+    }
+
+    /* Анимация превращения бургера в крестик при клике */
+    .menu-toggle:checked+.hamburger-btn span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle:checked+.hamburger-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked+.hamburger-btn span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .projects-contact-btn {
+        display: block;
+        width: 220px;
+        margin: 30px auto 40px;
+        text-align: center;
+    }
+
+    .main-header .btn-outline {
+        display: none;
+    }
+
+    .logo {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        min-height: 100vh;
+        padding: 120px 20px 60px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-descr {
+        max-width: 500px;
+        margin: 0 auto 30px;
+        font-size: 0.95rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2.6rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .btn-filled,
+    .btn-outline {
+        width: 280px;
+        text-align: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Сбалансированные отступы секций для мобильных экранов */
+    .about-section,
+    .stats-section,
+    .services-section,
+    .projects-section,
+    .contacts-section {
+        padding: 45px 15px;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-card {
+        height: 280px;
+    }
+
+    /* --- НОВЫЕ ПРАВКИ АДАПТИВНОСТИ ДЛЯ СЕКЦИИ «О КОМПАНИИ» --- */
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 5px;
+    }
+
+    .stats-info h2 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .stats-info p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    /* Перестраиваем плитки статистики 2х2 вместо длинной строки */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 15px 10px;
+        text-align: center;
+    }
+
+    .stat-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+
+    .stat-box p {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    /* --- НОВЫЕ ПРАВКИ АДАПТИВНОСТИ ДЛЯ СЕКЦИИ «УСЛУГИ» --- */
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 5px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+
+    .service-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* --- НОВЫЕ ПРАВКИ АДАПТИВНОСТИ ДЛЯ СЕКЦИИ «КОНТАКТЫ» --- */
+    .contacts-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 5px;
+    }
+
+    .contact-item {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .contact-item h4 {
+        font-size: 0.85rem;
+    }
+
+    .contact-item p {
+        font-size: 1rem;
+    }
+
+    /* Адаптивное сжатие изображения карты на телефонах */
+    .map-image {
+        width: 100%;
+        height: auto;
+        max-height: 240px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .section-tag {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==========================================================================
+   Стили для формы (Вне медиа-запроса, работают на всех экранах)
+   ========================================================================== */
+#contactForm {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    padding: 15px;
+    background: #161719;
+    border: 1px solid #bc9c65;
+    color: white;
+    font-size: 16px;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+}
