@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="contacts-section">
+        <h2 class="about-title" style="text-align: center; color: #bc9c65; margin-bottom: 30px;">
+            Оставить заявку
+        </h2>
+        <form id="contactForm">
+    <input type="text" id="name" placeholder="Ваше имя" required 
+           pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" 
+           title="Имя должно содержать только буквы, пробелы или дефис. Цифры недопустимы.">
+    
+    <input type="text" id="phone" placeholder="Телефон (+7...)" required 
+           pattern="^[\d\+\-\(\)\s]+$" 
+           title="Номер телефона может содержать только цифры, знаки +, -, ( ) и пробелы.">
+    
+    <input type="email" id="email" placeholder="E-mail" required>
+    
+    <textarea id="message" placeholder="Сообщение" rows="5" required></textarea>
+    
+    <button type="submit" class="btn-filled">Отправить заявку</button>
+    
+    <a href="index.html" class="btn-outline" style="display: block; text-align: center; text-decoration: none;">
+        На главную
+    </a>
+</form>
+        <p id="result"></p>
+    </section>
+    <script src="form.js"></script>
+</body>
+</html>
